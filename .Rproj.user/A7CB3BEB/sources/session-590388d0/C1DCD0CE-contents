@@ -1,0 +1,24 @@
+# plot_predator_prey.R
+
+# Load libraries
+library(ggplot2)
+
+# Load data
+prey_data <- read.csv("prey_timeseries.csv")
+predator_data <- read.csv("predator_timeseries.csv")
+
+# Plot prey
+prey_plot <- ggplot(prey_data, aes(x = time, y = prey)) +
+  geom_line(color = "forestgreen", size = 1) +
+  labs(title = "Prey Population Over Time", x = "Time", y = "Prey Population") +
+  theme_minimal()
+
+ggsave("prey_population.png", plot = prey_plot, width = 6, height = 4, dpi = 300)
+
+# Plot predator
+pred_plot <- ggplot(predator_data, aes(x = time, y = predator)) +
+  geom_line(color = "firebrick", size = 1) +
+  labs(title = "Predator Population Over Time", x = "Time", y = "Predator Population") +
+  theme_minimal()
+
+ggsave("predator_population.png", plot = pred_plot, width = 6, height = 4, dpi = 300)
