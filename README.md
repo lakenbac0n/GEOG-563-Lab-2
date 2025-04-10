@@ -15,3 +15,15 @@ Summary of equations used to produce figures:
 
 prey[t] = prey[t-1] + (a * prey[t-1] - b * prey[t-1] * pred[t-1]) * dt (prey populations change equation)
 pred[t] = pred[t-1] + (d * prey[t-1] * pred[t-1] - c * pred[t-1]) * dt (predator population change equation)
+
+This simulation shows how a prey population (like rabbits) and a predator population (like wolves) change over time, based on a classic set of equations called the Lotka-Volterra predator-prey model.
+
+The idea is:
+
+Prey naturally grow in number over time, but some get eaten by predators.
+
+Predators depend on catching prey to survive and reproduce. If there’s not enough food, the predator population shrinks.
+
+We used a simple method to simulate these changes step-by-step over time (called Euler’s method). At each small time step, we update the population sizes based on how many were born, died, or eaten.
+
+The simulation helps us understand how predator and prey numbers can cycle up and down in response to each other.
