@@ -26,4 +26,6 @@ Predators depend on catching prey to survive and reproduce. If there’s not eno
 
 We used a simple method to simulate these changes step-by-step over time (called Euler’s method). At each small time step, we update the population sizes based on how many were born, died, or eaten.
 
+We can see that the predator populations follow the prey populations -- as the prey rise so does the predators. As the predators delpete the prey populations, the predator populations eventually fally as well.
+
 The simulation helps us understand how predator and prey numbers can cycle up and down in response to each other.
