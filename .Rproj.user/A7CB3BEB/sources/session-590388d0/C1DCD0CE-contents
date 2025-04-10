@@ -22,3 +22,34 @@ pred_plot <- ggplot(predator_data, aes(x = time, y = predator)) +
   theme_minimal()
 
 ggsave("predator_population.png", plot = pred_plot, width = 6, height = 4, dpi = 300)
+
+##adding both to one figure 
+combined_data <- data.frame(
+  time = prey_data$time,
+  Prey = prey_data$prey,
+  Predator = predator_data$predator
+)
+
+# Reshape for ggplot (long format)
+library(tidyr)
+long_data <- pivot_longer(combined_data, cols = c("Prey", "Predator"),
+                          names_to = "Population", values_to = "Abundance")
+
+# Plot both time series
+plot <- ggplot(long_data, aes(x = time, y = Abundance, color = Population)) +
+  geom_line(size = 1) +
+  scale_color_manual(values = c("Prey" = "forestgreen", "Predator" = "firebrick")) +
+  labs(
+    title = "Predator and Prey Dynamics",
+    x = "Time",
+    y = "Population Size",
+    color = "Species"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5),
+    legend.position = "top"
+  )
+
+# Save as high-res PNG
+ggsave("predator_prey_dynamics.png", plot = plot, width = 8, height = 5, dpi = 600)

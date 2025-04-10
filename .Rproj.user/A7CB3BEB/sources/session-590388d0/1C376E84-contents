@@ -28,3 +28,4 @@ for (t in 2:length(time)) {
 data <- data.frame(time = time, prey = prey, predator = pred)
 write.csv(data[, c("time", "prey")], "prey_timeseries.csv", row.names = FALSE)
 write.csv(data[, c("time", "predator")], "predator_timeseries.csv", row.names = FALSE)
+
