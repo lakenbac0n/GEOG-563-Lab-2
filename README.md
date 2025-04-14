@@ -4,7 +4,7 @@ Coding Challenge: develop R code to simulate a Lotka-volterra predator prey-syst
 The Lotka-Volterra predator-prey model describes how two populations (a prey species and a predator species) interact over time.
 
 Workflow: 
-We prompted chatgpt to give use code using the prompt "Could you help me develop R code to simulate a latka volterra predator prey system. Use forward euler integration which is basically a for loop to simulate changes in the predator prey populations  over time. Save population time series as separate csv files, then develop a separate R-script for plotting these time series, save these plots as png figures." 
+We prompted chatgpt to give us code using the prompt "Could you help me develop R code to simulate a latka volterra predator prey system. Use forward euler integration which is basically a for loop to simulate changes in the predator prey populations  over time. Save population time series as separate csv files, then develop a separate R-script for plotting these time series, save these plots as png figures." 
 
 It spit out some code on how to do this.
 
